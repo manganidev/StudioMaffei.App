@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { IconComponent } from '../../../../shared/icon/icon.component';
 import { STUDIO, TEAM } from '../../../../core/studio.data';
 import { RevealDirective } from '../../../../shared/reveal.directive';
+import { SpotlightDirective } from '../../../../shared/spotlight.directive';
 
 @Component({
   selector: 'app-contatti',
-  imports: [RevealDirective],
+  imports: [IconComponent, RevealDirective, SpotlightDirective],
   templateUrl: './contatti.component.html',
   styleUrl: './contatti.component.scss',
 })

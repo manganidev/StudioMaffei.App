@@ -1,0 +1,49 @@
+<!-- Immagine di anteprima per social e chat (Open Graph), 1200x630. Viene convertita in public/og-image.png -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071427"/>
+      <stop offset="1" stop-color="#0a1c36"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="1020" cy="90" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f5fb8" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#1f5fb8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm" cx="60" cy="640" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d6a756" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#d6a756" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity=".05"/>
+    </pattern>
+    <linearGradient id="gold" x1="13" y1="18" x2="51" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/>
+      <stop offset="1" stop-color="#c58f3b"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a4580"/>
+      <stop offset="1" stop-color="#0a1c36"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#warm)"/>
+
+  <!-- Simbolo -->
+  <g transform="translate(88 92) scale(1.9)">
+    <rect width="64" height="64" rx="15" fill="url(#mark)" stroke="#f3d9a4" stroke-opacity=".3"/>
+    <g fill="none" stroke="url(#gold)">
+      <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" stroke-width="4.6"/>
+      <path d="M12.5 46.5h39" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <text x="88" y="300" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">Studio Maffei Marialuisa</text>
+  <text x="88" y="378" fill="#d6a756" font-family="Georgia, 'Times New Roman', serif" font-size="50" font-style="italic">Consulente del Lavoro a Firenze</text>
+
+  <rect x="88" y="424" width="56" height="3" rx="1.5" fill="#d6a756"/>
+  <text x="88" y="478" fill="#ffffff" fill-opacity=".78" font-family="'Segoe UI', Arial, sans-serif" font-size="28">Paghe · Consulenza del lavoro · Fiscale e tributaria · Societaria</text>
+  <text x="88" y="540" fill="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700">055 710964  ·  www.studiomaffei.info</text>
+</svg>

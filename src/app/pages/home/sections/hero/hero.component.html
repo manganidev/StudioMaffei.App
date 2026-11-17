@@ -1,38 +1,51 @@
 <section class="hero" id="top">
-  <div class="hero__bg" aria-hidden="true"></div>
+  <app-hero-backdrop />
 
+  <!-- Nella hero le comparse sono solo CSS (classe "intro"): partono subito, senza attendere
+       il JavaScript, così il titolo è visibile immediatamente (buono per LCP / Core Web Vitals). -->
   <div class="container hero__grid">
     <div class="hero__copy">
-      <span class="eyebrow" appReveal>{{ studio.role }} · {{ studio.order }}</span>
+      <span class="eyebrow intro">{{ studio.name }} · {{ studio.order }}</span>
 
-      <h1 appReveal="90">Lavoro, fisco e impresa, <em>in buone mani.</em></h1>
+      <h1 class="intro" style="animation-delay: 90ms">
+        Consulente del Lavoro
+        <em>a Firenze.<svg class="swoosh" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"
+            focusable="false"><path d="M3 17C70 6 190 3 297 11" pathLength="1" /></svg></em>
+      </h1>
 
-      <p class="hero__lead" appReveal="180">
-        Lo studio di <strong>{{ studio.owner }}</strong> affianca aziende e privati con un'esperienza
-        decennale nella consulenza del lavoro, fiscale, tributaria e societaria.
+      <p class="hero__lead intro" style="animation-delay: 180ms">
+        Lavoro, fisco e impresa in buone mani: lo studio di <strong>{{ studio.owner }}</strong> affianca
+        aziende e privati con un'esperienza decennale in consulenza del lavoro, paghe, fiscale,
+        tributaria e societaria.
       </p>
 
-      <div class="hero__actions" appReveal="270">
+      <div class="hero__actions intro" style="animation-delay: 270ms">
         <a class="btn btn--accent" href="#contatti" (click)="go($event, 'contatti')">
-          Contattaci <i class="fa-solid fa-arrow-right"></i>
+          Contattaci <i appIcon="arrow-right"></i>
         </a>
         <a class="btn btn--ghost" href="#servizi" (click)="go($event, 'servizi')">Scopri i servizi</a>
       </div>
 
-      <ul class="hero__facts" appReveal="360">
-        <li><i class="fa-solid fa-award"></i> Esperienza decennale</li>
-        <li><i class="fa-solid fa-building"></i> Aziende e privati</li>
-        <li><i class="fa-solid fa-location-dot"></i> Firenze</li>
+      <ul class="hero__facts intro" style="animation-delay: 360ms">
+        <li><i appIcon="award"></i> Esperienza decennale</li>
+        <li><i appIcon="building"></i> Aziende e privati</li>
+        <li><i appIcon="location-dot"></i> Firenze</li>
       </ul>
     </div>
 
-    <div class="hero__visual" appReveal="220">
+    <div class="hero__visual intro" style="animation-delay: 220ms" appTilt>
       <div class="hero__frame">
-        <img src="assets/img/pexels-photo-380769.png" alt="" fetchpriority="high">
+        <img src="assets/img/ambiente-ufficio-consulenza-800.webp"
+          srcset="assets/img/ambiente-ufficio-consulenza-480.webp 480w,
+                  assets/img/ambiente-ufficio-consulenza-800.webp 800w,
+                  assets/img/ambiente-ufficio-consulenza-1200.webp 1200w"
+          sizes="(max-width: 900px) min(480px, 100vw), 480px"
+          width="1200" height="673" fetchpriority="high"
+          alt="Ufficio luminoso con scrivanie e postazioni di lavoro">
       </div>
 
       <div class="float-card float-card--hours">
-        <i class="fa-regular fa-clock"></i>
+        <i appIcon="clock"></i>
         <div>
           <small class="label">Orari ufficio</small>
           <strong>{{ studio.hours.short }}</strong>
@@ -40,7 +53,7 @@
       </div>
 
       <a class="float-card float-card--phone" [href]="studio.phone.href">
-        <i class="fa-solid fa-phone"></i>
+        <i appIcon="phone" class="pulse"></i>
         <div>
           <small class="label">Chiamaci</small>
           <strong>{{ studio.phone.display }}</strong>
@@ -50,6 +63,6 @@
   </div>
 
   <a class="hero__scroll" href="#servizi" (click)="go($event, 'servizi')" aria-label="Vai ai servizi">
-    <i class="fa-solid fa-arrow-down"></i>
+    <i appIcon="arrow-down"></i>
   </a>
 </section>

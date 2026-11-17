@@ -1,9 +1,12 @@
 import { Component, afterNextRender, signal } from '@angular/core';
+import { IconComponent } from '../../shared/icon/icon.component';
 import { NAV_LINKS, STUDIO } from '../../core/studio.data';
+import { LogoMarkComponent } from '../../shared/logo-mark/logo-mark.component';
 import { scrollToSection } from '../../shared/scroll';
 
 @Component({
   selector: 'app-navbar',
+  imports: [IconComponent, LogoMarkComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   host: {

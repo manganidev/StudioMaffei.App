@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="sm-mark-title">
+  <title id="sm-mark-title">Studio Maffei</title>
+  <defs>
+    <linearGradient id="sm-mark-bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#123563"/>
+      <stop offset="1" stop-color="#071427"/>
+    </linearGradient>
+    <linearGradient id="sm-mark-gold" x1="13" y1="18" x2="51" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/>
+      <stop offset="1" stop-color="#c58f3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#sm-mark-bg)"/>
+  <g fill="none" stroke="url(#sm-mark-gold)">
+    <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" stroke-width="4.6"/>
+    <path d="M12.5 46.5h39" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>

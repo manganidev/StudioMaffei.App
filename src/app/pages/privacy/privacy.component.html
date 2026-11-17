@@ -1,0 +1,113 @@
+<section class="page-head">
+  <div class="container">
+    <a class="back" routerLink="/"><i appIcon="arrow-left"></i> Torna alla home</a>
+    <span class="eyebrow intro">Privacy e cookie</span>
+    <h1 class="intro" style="animation-delay: 80ms">Informativa sul trattamento dei dati personali</h1>
+    <p class="intro" style="animation-delay: 160ms">
+      Ai sensi dell'art. 13 del Regolamento (UE) 2016/679 (GDPR) e delle Linee guida del Garante
+      per la protezione dei dati personali sui cookie. Ultimo aggiornamento: {{ studio.legal.privacyUpdated }}.
+    </p>
+  </div>
+</section>
+
+<article class="section legal">
+  <div class="container legal__body">
+    <aside class="legal__summary">
+      <i appIcon="shield-halved"></i>
+      <div>
+        <strong>In breve</strong>
+        <p>
+          Questo sito non usa cookie, non installa strumenti di statistica o profilazione e non contatta
+          servizi esterni senza una tua azione. Per questo non è presente alcun banner cookie.
+        </p>
+      </div>
+    </aside>
+
+    <h2>1. Titolare del trattamento</h2>
+    <p>
+      {{ studio.name }} – {{ studio.owner }}, {{ studio.role }}<br>
+      {{ studio.address.street }}, {{ studio.address.city }}<br>
+      P.IVA {{ studio.legal.vatNumber }}<br>
+      Email: <a [href]="'mailto:' + studio.email">{{ studio.email }}</a> · Telefono:
+      <a [href]="studio.phone.href">{{ studio.phone.display }}</a>
+    </p>
+
+    <h2>2. Dati trattati e finalità</h2>
+    <h3>Dati di navigazione</h3>
+    <p>
+      Come ogni sito web, il server che ospita il sito registra automaticamente alcuni dati tecnici
+      delle visite (indirizzo IP, data e ora, pagina richiesta, tipo di browser) nei propri log.
+      Questi dati servono solo a garantire il funzionamento e la sicurezza del sito e non vengono
+      usati per identificare i visitatori.
+    </p>
+    <p><strong>Base giuridica:</strong> legittimo interesse del titolare alla sicurezza e al corretto funzionamento
+      del sito (art. 6, par. 1, lett. f GDPR).</p>
+
+    <h3>Dati che ci invii tu</h3>
+    <p>
+      Il sito non contiene moduli. Se ci contatti per email (ad esempio a
+      <a [href]="'mailto:' + studio.email">{{ studio.email }}</a> o agli indirizzi dei referenti) o per
+      telefono, tratteremo i dati che ci fornisci solo per rispondere alla tua richiesta e, se ne nasce
+      un incarico professionale, per svolgerlo.
+    </p>
+    <p><strong>Base giuridica:</strong> esecuzione di misure precontrattuali o di un contratto su tua richiesta
+      (art. 6, par. 1, lett. b GDPR) e adempimento di obblighi di legge (lett. c).</p>
+
+    <h2>3. Cookie e tecnologie simili</h2>
+    <p>
+      Il sito <strong>non utilizza cookie</strong>, né tecnici né di profilazione, e non salva informazioni sul tuo
+      dispositivo (nemmeno tramite localStorage o strumenti analoghi). Non sono presenti strumenti di
+      statistica (come Google Analytics), pixel pubblicitari o pulsanti social che traccino la navigazione.
+    </p>
+    <p>
+      Caratteri tipografici e icone sono ospitati direttamente su questo sito: per mostrarli non viene
+      inviato alcun dato a fornitori esterni.
+    </p>
+
+    <h2>4. Contenuti di terze parti</h2>
+    <h3>Mappa Google Maps</h3>
+    <p>
+      Nella sezione "Dove trovarci" la mappa interattiva <strong>non viene caricata automaticamente</strong>.
+      Solo se scegli di visualizzarla, cliccando su "Mostra la mappa", il tuo browser si collega ai server di
+      Google, che riceve il tuo indirizzo IP e può impostare cookie propri. Il trattamento è effettuato da
+      Google come titolare autonomo, secondo la sua
+      <a href="https://policies.google.com/privacy?hl=it" target="_blank" rel="noopener">informativa privacy</a>.
+      Google aderisce all'EU-U.S. Data Privacy Framework per i trasferimenti di dati verso gli Stati Uniti.
+    </p>
+    <p>
+      Allo stesso modo, i pulsanti "Indicazioni stradali" e "Apri in Google Maps" aprono il sito di Google
+      in una nuova scheda solo quando li clicchi.
+    </p>
+
+    <h2>5. Destinatari dei dati</h2>
+    <p>
+      I dati di navigazione sono trattati dal fornitore di hosting del sito ({{ studio.legal.hosting }}),
+      che agisce come responsabile del trattamento. I dati non vengono diffusi né ceduti a terzi per
+      finalità commerciali.
+    </p>
+
+    <h2>6. Conservazione</h2>
+    <p>
+      I log del server sono conservati dal fornitore di hosting per il tempo strettamente necessario alle
+      finalità di sicurezza. I dati delle richieste di contatto sono conservati per il tempo necessario a
+      gestirle; in caso di incarico, per i tempi previsti dalla normativa applicabile.
+    </p>
+
+    <h2>7. I tuoi diritti</h2>
+    <p>
+      Puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la loro rettifica o cancellazione, la
+      limitazione del trattamento, la portabilità, oppure opporti al trattamento (artt. 15–22 GDPR),
+      scrivendo a <a [href]="'mailto:' + studio.email">{{ studio.email }}</a>.
+    </p>
+    <p>
+      Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali
+      (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).
+    </p>
+
+    <h2>8. Modifiche</h2>
+    <p>
+      Questa informativa può essere aggiornata, ad esempio se sul sito vengono aggiunti nuovi servizi.
+      La data dell'ultimo aggiornamento è indicata in alto.
+    </p>
+  </div>
+</article>

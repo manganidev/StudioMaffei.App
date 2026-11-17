@@ -11,22 +11,22 @@
 
     <div class="contact">
       <div class="contact__main" appReveal>
-        <a class="tile tile--phone" [href]="studio.phone.href">
-          <i class="fa-solid fa-phone"></i>
+        <a class="tile tile--phone" [href]="studio.phone.href" appSpotlight>
+          <i appIcon="phone" class="pulse"></i>
           <small class="label">Telefono ufficio</small>
           <strong>{{ studio.phone.display }}</strong>
-          <span class="tile__cta">Chiama ora <i class="fa-solid fa-arrow-right"></i></span>
+          <span class="tile__cta">Chiama ora <i appIcon="arrow-right"></i></span>
         </a>
 
-        <div class="tile">
-          <i class="fa-regular fa-clock"></i>
+        <div class="tile" appSpotlight>
+          <i appIcon="clock"></i>
           <small class="label">Orari</small>
           <strong>{{ studio.hours.days }}</strong>
           <span>{{ studio.hours.time }}</span>
         </div>
 
-        <a class="tile" [href]="'mailto:' + studio.email">
-          <i class="fa-regular fa-envelope"></i>
+        <a class="tile" [href]="'mailto:' + studio.email" appSpotlight>
+          <i appIcon="envelope"></i>
           <small class="label">Mail studio</small>
           <strong class="tile__mail">{{ studio.email }}</strong>
           <span>Per informazioni generali</span>
@@ -35,8 +35,8 @@
 
       <div class="contact__team">
         @for (gruppo of team; track gruppo.service; let i = $index) {
-          <div class="team" [appReveal]="120 + i * 100">
-            <h3><i [class]="gruppo.icon"></i> {{ gruppo.service }}</h3>
+          <div class="team" [appReveal]="120 + i * 100" appSpotlight>
+            <h3><i [appIcon]="gruppo.icon"></i> {{ gruppo.service }}</h3>
             <ul>
               @for (persona of gruppo.people; track persona.email) {
                 <li>
@@ -46,7 +46,7 @@
                       <strong>{{ persona.name }}</strong>
                       <small>{{ persona.email }}</small>
                     </span>
-                    <i class="fa-solid fa-arrow-right go" aria-hidden="true"></i>
+                    <i appIcon="arrow-right" class="go"></i>
                   </a>
                 </li>
               }

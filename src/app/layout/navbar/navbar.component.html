@@ -1,7 +1,7 @@
 <header class="nav" [class.nav--solid]="solid()" [class.nav--open]="open()">
   <div class="container nav__inner">
     <a class="brand" href="#top" (click)="go($event, 'top')" aria-label="Studio Maffei, torna all'inizio">
-      <span class="brand__mark">SM</span>
+      <app-logo-mark class="brand__mark" [size]="44" />
       <span class="brand__text">
         <strong>Studio Maffei</strong>
         <small>{{ studio.role }}</small>
@@ -13,7 +13,7 @@
         <a [href]="'#' + link.id" (click)="go($event, link.id)">{{ link.label }}</a>
       }
       <a class="btn btn--accent nav__cta" [href]="studio.phone.href">
-        <i class="fa-solid fa-phone"></i> {{ studio.phone.display }}
+        <i appIcon="phone"></i> {{ studio.phone.display }}
       </a>
     </nav>
 
@@ -23,4 +23,5 @@
       <span></span><span></span><span></span>
     </button>
   </div>
+  <div class="nav__progress" aria-hidden="true"></div>
 </header>

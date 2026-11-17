@@ -1,0 +1,23 @@
+<!-- Concept A – Monogramma: "M" in stile Didone (aste spesse e sottili, grazie filiformi) in una cornice sottile -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#123563"/><stop offset="1" stop-color="#071427"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="16" y1="18" x2="48" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/><stop offset="1" stop-color="#c58f3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="7.5" y="7.5" width="49" height="49" rx="10" fill="none" stroke="#f3d9a4" stroke-opacity=".45" stroke-width=".8"/>
+  <g fill="url(#gold)">
+    <rect x="19.6" y="19.6" width="1.5" height="25.4"/>
+    <polygon points="19.4,19 24.6,19 33.4,45 30.4,45"/>
+    <polygon points="30.6,45 32.2,45 44.6,19 43,19"/>
+    <rect x="40.9" y="19" width="4.6" height="26"/>
+    <rect x="16.6" y="44.2" width="7.6" height="1.2"/>
+    <rect x="38.4" y="44.2" width="9.8" height="1.2"/>
+    <rect x="16.6" y="19" width="5" height="1.2"/>
+    <rect x="43" y="19" width="5.2" height="1.2"/>
+  </g>
+</svg>

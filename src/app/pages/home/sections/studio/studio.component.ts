@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { IconComponent } from '../../../../shared/icon/icon.component';
+import { CountUpDirective } from '../../../../shared/count-up.directive';
 import { RevealDirective } from '../../../../shared/reveal.directive';
 import { scrollToSection } from '../../../../shared/scroll';
 
 @Component({
   selector: 'app-studio',
-  imports: [RevealDirective],
+  imports: [IconComponent, RevealDirective, CountUpDirective],
   templateUrl: './studio.component.html',
   styleUrl: './studio.component.scss',
 })

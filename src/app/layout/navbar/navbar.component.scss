@@ -62,6 +62,36 @@
   padding: .7rem 1.2rem;
 }
 
+// Barra di avanzamento della lettura: solo CSS, nei browser che supportano le scroll-driven animations.
+.nav__progress {
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-300));
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav__progress {
+    animation: nav-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes nav-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__progress {
+    display: none;
+  }
+}
+
 .nav__toggle {
   display: none;
 }

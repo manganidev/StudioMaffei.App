@@ -1,0 +1,20 @@
+<!-- Concept B – Cupola: la cupola del Brunelleschi stilizzata a linee (Firenze, protezione, solidità) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#123563"/><stop offset="1" stop-color="#071427"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="14" y1="10" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/><stop offset="1" stop-color="#c58f3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 39C19 28 25 20.5 32 17C39 20.5 45 28 45 39Z" stroke-width="2.6"/>
+    <path d="M26 39C26 29.5 28.8 22 32 17M38 39C38 29.5 35.2 22 32 17" stroke-width="1.6"/>
+    <path d="M17.5 39h29M18.5 39v6.5h27V39" stroke-width="2.2"/>
+    <path d="M23 41.5v2M27.5 41.5v2M32 41.5v2M36.5 41.5v2M41 41.5v2" stroke-width="1.4"/>
+    <path d="M30 17v-4.5h4V17M29.5 12.5h5M32 12.5V9.5" stroke-width="1.5"/>
+    <path d="M13 49.5h38" stroke-width="2.4"/>
+  </g>
+</svg>

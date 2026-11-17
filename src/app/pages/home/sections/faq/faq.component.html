@@ -1,0 +1,21 @@
+<section class="section" id="faq">
+  <div class="container faq">
+    <header class="section-head" appReveal>
+      <span class="eyebrow">Domande frequenti</span>
+      <h2>Le risposte <em>in breve.</em></h2>
+      <p>Le informazioni che ci chiedono più spesso su servizi, orari e recapiti dello studio.</p>
+    </header>
+
+    <div class="faq__list">
+      @for (item of faq; track item.question; let i = $index) {
+        <details class="faq__item" [appReveal]="i * 60" [open]="i === 0">
+          <summary>
+            <h3>{{ item.question }}</h3>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <p>{{ item.answer }}</p>
+        </details>
+      }
+    </div>
+  </div>
+</section>

@@ -1,13 +1,18 @@
 import { DestroyRef, Directive, ElementRef, afterNextRender, inject, input, numberAttribute } from '@angular/core';
+import { onceInView } from './in-view';
+
+export type RevealMode = 'up' | 'clip';
 
 /**
- * Fa comparire l'elemento con una leggera animazione quando entra nello schermo.
- * Uso: <div appReveal> oppure <div appReveal="120"> per un ritardo in millisecondi.
+ * Fa comparire l'elemento con un'animazione quando entra nello schermo.
+ * Uso: <div appReveal>, <div appReveal="120"> (ritardo in ms),
+ *      <img appReveal revealMode="clip"> (immagine che si svela dal basso).
  */
 @Directive({
   selector: '[appReveal]',
   host: {
     class: 'reveal',
+    '[class.reveal--clip]': "revealMode() === 'clip'",
     '[style.animation-delay.ms]': 'delay()',
   },
 })
@@ -16,29 +21,15 @@ export class RevealDirective {
     alias: 'appReveal',
     transform: (value: unknown) => numberAttribute(value, 0),
   });
+  readonly revealMode = input<RevealMode>('up');
 
   constructor() {
     const el = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const destroyRef = inject(DestroyRef);
 
     afterNextRender(() => {
-      if (typeof IntersectionObserver === 'undefined') {
-        el.classList.add('is-visible');
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.classList.add('is-visible');
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
-      );
-
-      observer.observe(el);
-      destroyRef.onDestroy(() => observer.disconnect());
+      const stop = onceInView(el, () => el.classList.add('is-visible'));
+      destroyRef.onDestroy(stop);
     });
   }
 }

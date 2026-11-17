@@ -86,3 +86,86 @@
     min-height: 340px;
   }
 }
+
+/* Mappa "a due clic": segnaposto disegnato finché l'utente non sceglie di caricare Google Maps */
+.map-gate {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  min-height: inherit;
+  padding: 1.5rem;
+}
+
+.map-gate__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-gate__ring {
+  fill: rgba(0, 61, 133, .18);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-ring 2.4s var(--ease) infinite;
+}
+
+@keyframes map-ring {
+  from {
+    opacity: 1;
+    transform: scale(.6);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.map-gate__card {
+  position: relative;
+  max-width: 440px;
+  padding: 1.4rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .95);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: 1.2rem;
+
+    i {
+      color: var(--brand);
+    }
+  }
+
+  p {
+    margin-top: .6rem;
+    font-size: .9rem;
+    color: var(--muted);
+  }
+
+  a {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+.map-gate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1.25rem;
+  margin-top: 1.1rem;
+
+  .btn {
+    padding: .75rem 1.25rem;
+  }
+}

@@ -1,0 +1,18 @@
+<!-- Icona a tutto campo per PWA / Apple touch icon: il simbolo sta nella "safe zone" centrale (80%). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#123563"/>
+      <stop offset="1" stop-color="#071427"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="13" y1="18" x2="51" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/>
+      <stop offset="1" stop-color="#c58f3b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g fill="none" stroke="url(#gold)" transform="translate(256 256) scale(5.4) translate(-32 -32.5)">
+    <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" stroke-width="4.6"/>
+    <path d="M12.5 46.5h39" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>

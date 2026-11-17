@@ -2,7 +2,7 @@
   <div class="container footer__grid">
     <div class="footer__about">
       <a class="brand" href="#top" (click)="go($event, 'top')" aria-label="Torna all'inizio">
-        <span class="brand__mark">SM</span>
+        <app-logo-mark class="brand__mark" [size]="44" [autoplay]="false" />
         <span class="brand__text">
           <strong>Studio Maffei</strong>
           <small>{{ studio.role }}</small>
@@ -23,23 +23,32 @@
     <div>
       <h4>Contatti</h4>
       <ul>
-        <li><a [href]="studio.phone.href"><i class="fa-solid fa-phone"></i>{{ studio.phone.display }}</a></li>
-        <li><a [href]="'mailto:' + studio.email"><i class="fa-regular fa-envelope"></i>{{ studio.email }}</a></li>
-        <li><i class="fa-regular fa-clock"></i>{{ studio.hours.short }}</li>
+        <li><a [href]="studio.phone.href"><i appIcon="phone"></i>{{ studio.phone.display }}</a></li>
+        <li><a [href]="'mailto:' + studio.email"><i appIcon="envelope"></i>{{ studio.email }}</a></li>
+        <li><i appIcon="clock"></i>{{ studio.hours.short }}</li>
       </ul>
     </div>
 
     <div>
       <h4>Sede</h4>
       <address>
-        <i class="fa-solid fa-location-dot"></i>
+        <i appIcon="location-dot"></i>
         <span>{{ studio.address.street }}<br>{{ studio.address.city }}</span>
       </address>
     </div>
   </div>
 
   <div class="container footer__bottom">
-    <span>© {{ year }} {{ studio.name }} · {{ studio.role }}</span>
-    <a href="#top" (click)="go($event, 'top')">Torna su <i class="fa-solid fa-arrow-up"></i></a>
+    <div class="footer__legal">
+      <span>© {{ year }} {{ studio.name }} · {{ studio.role }}</span>
+      <span>
+        P.IVA {{ studio.legal.vatNumber }} · Iscritta all'{{ studio.orderFull }}
+        n. {{ studio.legal.alboNumber }}
+      </span>
+    </div>
+    <nav class="footer__links" aria-label="Link legali">
+      <a routerLink="/privacy">Privacy e cookie</a>
+      <a href="#top" (click)="go($event, 'top')">Torna su <i appIcon="arrow-up"></i></a>
+    </nav>
   </div>
 </footer>

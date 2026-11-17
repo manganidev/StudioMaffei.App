@@ -11,9 +11,9 @@
 
     <div class="grid">
       @for (servizio of servizi; track servizio.title; let i = $index) {
-        <article class="card" [appReveal]="i * 90">
+        <article class="card" [appReveal]="i * 90" appSpotlight>
           <span class="card__num" aria-hidden="true">0{{ i + 1 }}</span>
-          <div class="card__icon"><i [class]="servizio.icon"></i></div>
+          <div class="card__icon"><i [appIcon]="servizio.icon"></i></div>
           <h3>{{ servizio.title }}</h3>
           <p>{{ servizio.text }}</p>
         </article>

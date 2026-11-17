@@ -1,9 +1,15 @@
 <section class="section section--cream" id="studio">
   <div class="container about">
-    <div class="about__media" appReveal>
-      <img src="assets/img/teamwork.png" alt="" loading="lazy">
-      <div class="about__badge">
-        <strong>10+</strong>
+    <div class="about__media">
+      <img appReveal revealMode="clip" src="assets/img/collaborazione-consulente-aziende-800.webp"
+        srcset="assets/img/collaborazione-consulente-aziende-480.webp 480w,
+                assets/img/collaborazione-consulente-aziende-800.webp 800w,
+                assets/img/collaborazione-consulente-aziende-960.webp 960w"
+        sizes="(max-width: 900px) min(480px, 100vw), 500px"
+        width="960" height="605" loading="lazy" decoding="async"
+        alt="Mani unite sopra una scrivania di lavoro: collaborazione tra consulente e aziende">
+      <div class="about__badge" appReveal="500">
+        <strong appCountUp>10+</strong>
         <span>anni di<br>esperienza</span>
       </div>
     </div>
@@ -22,7 +28,7 @@
       <ul class="checks">
         @for (punto of punti; track punto.title; let i = $index) {
           <li [appReveal]="140 + i * 80">
-            <i class="fa-solid fa-check"></i>
+            <i appIcon="check"></i>
             <div>
               <strong>{{ punto.title }}</strong>
               <span>{{ punto.text }}</span>
@@ -32,7 +38,7 @@
       </ul>
 
       <a class="btn btn--primary" href="#contatti" (click)="go($event, 'contatti')" appReveal="380">
-        Richiedi una consulenza <i class="fa-solid fa-arrow-right"></i>
+        Richiedi una consulenza <i appIcon="arrow-right"></i>
       </a>
     </div>
   </div>

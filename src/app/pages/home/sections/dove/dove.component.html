@@ -7,11 +7,16 @@
 
     <div class="where">
       <aside class="where__card" appReveal>
-        <img src="assets/img/img-duccio.png" alt="Via Duccio di Buoninsegna a Firenze, dove si trova lo studio" loading="lazy">
+        <img appReveal="200" revealMode="clip" src="assets/img/via-duccio-di-buoninsegna-firenze-558.webp"
+          srcset="assets/img/via-duccio-di-buoninsegna-firenze-480.webp 480w,
+                  assets/img/via-duccio-di-buoninsegna-firenze-558.webp 558w"
+          sizes="(max-width: 900px) 100vw, 380px"
+          width="558" height="383" loading="lazy" decoding="async"
+          alt="Via Duccio di Buoninsegna a Firenze, dove si trova lo Studio Maffei">
 
         <div class="where__body">
           <div class="where__row">
-            <i class="fa-solid fa-location-dot"></i>
+            <i appIcon="location-dot"></i>
             <div>
               <small class="label">Indirizzo</small>
               <strong>{{ studio.address.street }}</strong>
@@ -20,7 +25,7 @@
           </div>
 
           <div class="where__row">
-            <i class="fa-regular fa-clock"></i>
+            <i appIcon="clock"></i>
             <div>
               <small class="label">Orari di apertura</small>
               <strong>{{ studio.hours.days }}</strong>
@@ -29,16 +34,51 @@
           </div>
 
           <a class="btn btn--primary" [href]="studio.directionsUrl" target="_blank" rel="noopener">
-            Indicazioni stradali <i class="fa-solid fa-diamond-turn-right"></i>
+            Indicazioni stradali <i appIcon="diamond-turn-right"></i>
           </a>
         </div>
       </aside>
 
       <div class="where__map" appReveal="120">
-        <iframe
-          src="https://maps.google.com/maps?q=Via%20Duccio%20di%20Buoninsegna%2013%2C%20Firenze&z=16&hl=it&output=embed"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Mappa: Studio Maffei, Via Duccio di Buoninsegna 13, Firenze"></iframe>
+        <!-- Privacy: la mappa Google viene caricata solo dopo il clic dell'utente ("a due clic"),
+             così nessun dato arriva a Google e nessun cookie di terze parti viene impostato prima. -->
+        @if (mapLoaded()) {
+          <iframe [src]="mapEmbedUrl" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa: Studio Maffei, Via Duccio di Buoninsegna 13, Firenze"></iframe>
+        } @else {
+          <div class="map-gate">
+            <svg class="map-gate__art" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true" focusable="false">
+              <rect width="800" height="480" fill="#e9edf3" />
+              <path d="M560 40c90-10 170 40 190 110s-40 120-120 120-150-50-160-120 20-100 90-110z" fill="#dde8d6" />
+              <path d="M-20 400C180 340 420 440 820 350" fill="none" stroke="#cfe0f2" stroke-width="30" />
+              <g fill="none" stroke-linecap="round">
+                <g stroke="#d3d9e3" stroke-width="20">
+                  <path d="M0 150L800 105M120 -10L270 490M520 -10L465 490M0 300C250 255 500 300 800 235" />
+                </g>
+                <g stroke="#fff" stroke-width="15">
+                  <path d="M0 150L800 105M120 -10L270 490M520 -10L465 490M0 300C250 255 500 300 800 235" />
+                </g>
+                <path d="M300 -10L820 420M-10 40L340 480M640 480L800 330" stroke="#fff" stroke-width="7" />
+              </g>
+              <circle class="map-gate__ring" cx="400" cy="232" r="26" />
+              <path d="M400 180c-20 0-36 16-36 36 0 27 36 64 36 64s36-37 36-64c0-20-16-36-36-36z" fill="#003d85" />
+              <circle cx="400" cy="216" r="12" fill="#d6a756" />
+            </svg>
+
+            <div class="map-gate__card">
+              <h3><i appIcon="map-location-dot"></i> Mappa interattiva</h3>
+              <p>
+                La mappa è fornita da Google: caricandola, Google riceverà il tuo indirizzo IP e potrà
+                impostare cookie propri. Dettagli nella nostra <a routerLink="/privacy">informativa privacy</a>.
+              </p>
+              <div class="map-gate__actions">
+                <button class="btn btn--primary" type="button" (click)="mapLoaded.set(true)">Mostra la mappa</button>
+                <a class="map-gate__link" [href]="studio.mapUrl" target="_blank" rel="noopener">Apri in Google Maps</a>
+              </div>
+            </div>
+          </div>
+        }
       </div>
     </div>
   </div>

@@ -10,27 +10,6 @@
   color: #fff;
 }
 
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(55% 60% at 88% 18%, rgba(31, 95, 184, .55), transparent 70%),
-    radial-gradient(40% 50% at 6% 95%, rgba(214, 167, 86, .2), transparent 70%),
-    linear-gradient(180deg, var(--navy-950), var(--navy-900));
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse at 70% 40%, #000 15%, transparent 70%);
-  }
-}
-
 .hero__grid {
   display: grid;
   grid-template-columns: 1.08fr .92fr;
@@ -46,8 +25,47 @@ h1 {
   letter-spacing: -.025em;
 
   em {
+    position: relative;
     font-style: italic;
+    white-space: nowrap;
     color: var(--accent);
+  }
+}
+
+// Sottolineatura "a mano" che si disegna sotto "a Firenze."
+.swoosh {
+  position: absolute;
+  left: 0;
+  bottom: -.14em;
+  width: 100%;
+  height: .3em;
+  overflow: visible;
+
+  path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: swoosh .9s var(--ease) 1.1s forwards;
+  }
+}
+
+@keyframes swoosh {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// La foto entra con un leggero zoom all'indietro
+.hero__frame img {
+  animation: hero-zoom 1.8s var(--ease) both;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.18);
   }
 }
 

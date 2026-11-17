@@ -99,3 +99,20 @@ i {
     grid-template-columns: 1fr;
   }
 }
+
+.footer__legal {
+  display: grid;
+  gap: .25rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+
+  a:first-child {
+    font-weight: 600;
+    color: rgba(255, 255, 255, .75);
+  }
+}
