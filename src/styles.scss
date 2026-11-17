@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Stili globali: variabili e base tipografica del sito originale */
+
+:root {
+  --h1-size: 4rem;
+  --altezza-nav: 5rem;
+  --altezza-img: 300px;
+  --y-space: 4rem;
+  --h2-size: 3rem;
+  --h4-size: 2rem;
+  --sub-title-size: 1.5rem;
+  --blu: rgba(0, 61, 133, .7);
+}
+
+@media screen and (max-width: 930px) {
+  :root {
+    --h1-size: 2.5rem;
+    --altezza-nav: 2.5rem;
+    --altezza-img: 100px;
+    --h2-size: 1.5rem;
+    --h4-size: 1.5rem;
+    --y-space: 2rem;
+    --sub-title-size: 1.1rem;
+  }
+}
+
+/* Sovrascrive il reboot di Bootstrap per mantenere l'aspetto originale */
+html body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: normal;
+  color: #000;
+}
