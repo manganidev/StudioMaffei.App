@@ -96,7 +96,18 @@
   display: none;
 }
 
-@media (max-width: 900px) {
+.brand {
+  flex: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .nav__links {
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 1024px) {
   .nav__toggle {
     display: flex;
     flex-direction: column;

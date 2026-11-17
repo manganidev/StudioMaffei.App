@@ -60,18 +60,14 @@ li {
   }
 }
 
+// Rombo dorato tra una voce e l'altra
 .marquee__sep {
   flex: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 4.6;
-
-  path + path {
-    stroke-width: 2.6;
-    stroke-linecap: round;
-  }
+  width: .55rem;
+  height: .55rem;
+  border: 1.5px solid var(--accent);
+  background: rgba(214, 167, 86, .25);
+  transform: rotate(45deg);
 }
 
 @keyframes marquee {

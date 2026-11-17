@@ -4,10 +4,12 @@ import { onceInView } from '../in-view';
 let nextId = 0;
 
 /**
- * Simbolo dello studio (la "m" formata da due archi) con animazione di disegno.
+ * Simbolo dello studio: monogramma "M" in stile Didone dentro una cornice, con animazione.
+ * La cornice si disegna, le aste della M si tracciano come colpi di penna, poi grazie e riflesso.
  * - autoplay = true: l'animazione parte al caricamento, solo CSS (funziona anche senza JavaScript).
  * - autoplay = false: parte quando il logo entra nello schermo; fino ad allora è mostrato completo.
  * Gli stili sono globali (styles.scss, sezione "Logo animato").
+ * La stessa geometria è in public/brand/logo-mark.svg e negli script di generazione degli asset.
  */
 @Component({
   selector: 'app-logo-mark',
@@ -19,7 +21,7 @@ let nextId = 0;
           <stop offset="0" stop-color="#123563" />
           <stop offset="1" stop-color="#071427" />
         </linearGradient>
-        <linearGradient [attr.id]="ids.gold" x1="13" y1="18" x2="51" y2="47" gradientUnits="userSpaceOnUse">
+        <linearGradient [attr.id]="ids.gold" x1="16" y1="18" x2="48" y2="46" gradientUnits="userSpaceOnUse">
           <stop offset="0" stop-color="#f3d9a4" />
           <stop offset="1" stop-color="#c58f3b" />
         </linearGradient>
@@ -34,12 +36,17 @@ let nextId = 0;
       </defs>
 
       <rect width="64" height="64" rx="15" [attr.fill]="url(ids.bg)" />
-      <g fill="none" [attr.stroke]="url(ids.gold)">
-        <path class="mark__arches" pathLength="1" stroke-width="4.6"
-          d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5" />
-        <path class="mark__column" pathLength="1" stroke-width="4.6" d="M32 27v14.5" />
-        <path class="mark__base" stroke-width="2.6" stroke-linecap="round" d="M12.5 46.5h39" />
+      <path class="mark__frame" pathLength="1" fill="none" stroke="#f3d9a4" stroke-opacity=".5" stroke-width="1"
+        d="M17.5 7.5h29a10 10 0 0 1 10 10v29a10 10 0 0 1-10 10h-29a10 10 0 0 1-10-10v-29a10 10 0 0 1 10-10z" />
+
+      <g [attr.fill]="url(ids.gold)">
+        <path class="mark__stroke" style="--d: .5s" d="M19.6 19.6h1.5v25.4h-1.5z" />
+        <path class="mark__stroke mark__stroke--down" style="--d: .72s" d="M19.4 19H24.6L33.4 45H30.4z" />
+        <path class="mark__stroke" style="--d: .98s" d="M30.6 45H32.2L44.6 19H43z" />
+        <path class="mark__stroke mark__stroke--down" style="--d: 1.2s" d="M40.9 19h4.6v26h-4.6z" />
+        <path class="mark__serifs" d="M16.6 44.2h7.6v1.2h-7.6zM38.4 44.2h9.8v1.2h-9.8zM16.6 19h5v1.2h-5zM43 19h5.2v1.2h-5.2z" />
       </g>
+
       <g [attr.clip-path]="url(ids.clip)">
         <g transform="rotate(20 32 32)">
           <rect class="mark__shine" x="-44" y="-16" width="26" height="96" [attr.fill]="url(ids.shine)" />

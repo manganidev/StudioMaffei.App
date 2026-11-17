@@ -5,10 +5,7 @@
         @for (item of items; track item) {
           <li>
             {{ item }}
-            <svg class="marquee__sep" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-              <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" />
-              <path d="M12.5 46.5h39" />
-            </svg>
+            <span class="marquee__sep" aria-hidden="true"></span>
           </li>
         }
       </ul>

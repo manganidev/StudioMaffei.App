@@ -34,9 +34,13 @@
   <!-- Simbolo -->
   <g transform="translate(88 92) scale(1.9)">
     <rect width="64" height="64" rx="15" fill="url(#mark)" stroke="#f3d9a4" stroke-opacity=".3"/>
-    <g fill="none" stroke="url(#gold)">
-      <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" stroke-width="4.6"/>
-      <path d="M12.5 46.5h39" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M17.5 7.5h29a10 10 0 0 1 10 10v29a10 10 0 0 1-10 10h-29a10 10 0 0 1-10-10v-29a10 10 0 0 1 10-10z" fill="none" stroke="#f3d9a4" stroke-opacity=".5" stroke-width="1"/>
+    <g fill="url(#gold)">
+      <path d="M19.6 19.6h1.5v25.4h-1.5z"/>
+      <path d="M19.4 19H24.6L33.4 45H30.4z"/>
+      <path d="M30.6 45H32.2L44.6 19H43z"/>
+      <path d="M40.9 19h4.6v26h-4.6z"/>
+      <path d="M16.6 44.2h7.6v1.2h-7.6zM38.4 44.2h9.8v1.2h-9.8zM16.6 19h5v1.2h-5zM43 19h5.2v1.2h-5.2z"/>
     </g>
   </g>
 

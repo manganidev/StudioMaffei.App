@@ -2,18 +2,20 @@
   <title id="sm-logo-light-title">Studio Maffei – Consulente del Lavoro</title>
   <defs>
     <linearGradient id="sm-logo-light-bg" x1="0" y1="0" x2="0" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1a4580"/>
-      <stop offset="1" stop-color="#0a1c36"/>
+      <stop offset="0" stop-color="#1a4580"/><stop offset="1" stop-color="#0a1c36"/>
     </linearGradient>
-    <linearGradient id="sm-logo-light-gold" x1="13" y1="18" x2="51" y2="47" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f3d9a4"/>
-      <stop offset="1" stop-color="#c58f3b"/>
+    <linearGradient id="sm-logo-light-gold" x1="16" y1="18" x2="48" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f3d9a4"/><stop offset="1" stop-color="#c58f3b"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#sm-logo-light-bg)" stroke="#f3d9a4" stroke-opacity=".25"/>
-  <g fill="none" stroke="url(#sm-logo-light-gold)">
-    <path d="M17 41.5V27a7.5 7.5 0 0 1 15 0a7.5 7.5 0 0 1 15 0v14.5M32 27v14.5" stroke-width="4.6"/>
-    <path d="M12.5 46.5h39" stroke-width="2.6" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="15" fill="url(#sm-logo-light-bg)"/>
+  <path d="M17.5 7.5h29a10 10 0 0 1 10 10v29a10 10 0 0 1-10 10h-29a10 10 0 0 1-10-10v-29a10 10 0 0 1 10-10z" fill="none" stroke="#f3d9a4" stroke-opacity=".5" stroke-width="1"/>
+  <g fill="url(#sm-logo-light-gold)">
+    <path d="M19.6 19.6h1.5v25.4h-1.5z"/>
+    <path d="M19.4 19H24.6L33.4 45H30.4z"/>
+    <path d="M30.6 45H32.2L44.6 19H43z"/>
+    <path d="M40.9 19h4.6v26h-4.6z"/>
+    <path d="M16.6 44.2h7.6v1.2h-7.6zM38.4 44.2h9.8v1.2h-9.8zM16.6 19h5v1.2h-5zM43 19h5.2v1.2h-5.2z"/>
   </g>
   <text x="80" y="33" fill="#ffffff" font-family="Fraunces, Georgia, 'Times New Roman', serif" font-size="27" font-weight="600" letter-spacing="-0.3">Studio Maffei</text>
   <text x="81" y="51" fill="#d6a756" font-family="Manrope, 'Segoe UI', Arial, sans-serif" font-size="9.6" font-weight="700" letter-spacing="2.5">CONSULENTE DEL LAVORO</text>
