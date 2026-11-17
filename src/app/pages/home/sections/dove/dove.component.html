@@ -1,0 +1,45 @@
+<section class="section" id="dove">
+  <div class="container">
+    <header class="section-head section-head--center" appReveal>
+      <span class="eyebrow">Dove trovarci</span>
+      <h2>Ti aspettiamo <em>in studio.</em></h2>
+    </header>
+
+    <div class="where">
+      <aside class="where__card" appReveal>
+        <img src="assets/img/img-duccio.png" alt="Via Duccio di Buoninsegna a Firenze, dove si trova lo studio" loading="lazy">
+
+        <div class="where__body">
+          <div class="where__row">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <small class="label">Indirizzo</small>
+              <strong>{{ studio.address.street }}</strong>
+              <span>{{ studio.address.city }}</span>
+            </div>
+          </div>
+
+          <div class="where__row">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+              <small class="label">Orari di apertura</small>
+              <strong>{{ studio.hours.days }}</strong>
+              <span>{{ studio.hours.time }}</span>
+            </div>
+          </div>
+
+          <a class="btn btn--primary" [href]="studio.directionsUrl" target="_blank" rel="noopener">
+            Indicazioni stradali <i class="fa-solid fa-diamond-turn-right"></i>
+          </a>
+        </div>
+      </aside>
+
+      <div class="where__map" appReveal="120">
+        <iframe
+          src="https://maps.google.com/maps?q=Via%20Duccio%20di%20Buoninsegna%2013%2C%20Firenze&z=16&hl=it&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mappa: Studio Maffei, Via Duccio di Buoninsegna 13, Firenze"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__about">
+      <a class="brand" href="#top" (click)="go($event, 'top')" aria-label="Torna all'inizio">
+        <span class="brand__mark">SM</span>
+        <span class="brand__text">
+          <strong>Studio Maffei</strong>
+          <small>{{ studio.role }}</small>
+        </span>
+      </a>
+      <p>{{ studio.owner }}, {{ studio.role }} – {{ studio.order }}. Consulenza del lavoro, fiscale e tributaria per aziende e privati.</p>
+    </div>
+
+    <nav aria-label="Link rapidi">
+      <h4>Lo studio</h4>
+      <ul>
+        @for (link of links; track link.id) {
+          <li><a [href]="'#' + link.id" (click)="go($event, link.id)">{{ link.label }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <h4>Contatti</h4>
+      <ul>
+        <li><a [href]="studio.phone.href"><i class="fa-solid fa-phone"></i>{{ studio.phone.display }}</a></li>
+        <li><a [href]="'mailto:' + studio.email"><i class="fa-regular fa-envelope"></i>{{ studio.email }}</a></li>
+        <li><i class="fa-regular fa-clock"></i>{{ studio.hours.short }}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Sede</h4>
+      <address>
+        <i class="fa-solid fa-location-dot"></i>
+        <span>{{ studio.address.street }}<br>{{ studio.address.city }}</span>
+      </address>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© {{ year }} {{ studio.name }} · {{ studio.role }}</span>
+    <a href="#top" (click)="go($event, 'top')">Torna su <i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>

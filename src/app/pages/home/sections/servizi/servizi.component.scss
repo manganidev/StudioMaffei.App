@@ -1,0 +1,88 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1.6rem 2.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-500), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .45s var(--ease);
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .card__icon {
+      background: var(--brand);
+      color: #fff;
+      transform: rotate(-6deg);
+    }
+  }
+
+  h3 {
+    margin-top: 1.6rem;
+    font-size: 1.35rem;
+  }
+
+  p {
+    margin-top: .75rem;
+    font-size: .98rem;
+    color: var(--muted);
+  }
+}
+
+.card__num {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brand-100);
+}
+
+.card__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 1.35rem;
+  background: var(--brand-100);
+  color: var(--brand);
+  transition: background-color .3s, color .3s, transform .35s var(--ease);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,23 @@
+<section class="section" id="servizi">
+  <div class="container">
+    <header class="section-head section-head--center" appReveal>
+      <span class="eyebrow">I servizi</span>
+      <h2>Un'assistenza completa, <em>dalla busta paga al bilancio.</em></h2>
+      <p>
+        Consulenza del lavoro, fiscale e tributaria: seguiamo aziende e privati in ogni adempimento,
+        con referenti dedicati per ciascun servizio.
+      </p>
+    </header>
+
+    <div class="grid">
+      @for (servizio of servizi; track servizio.title; let i = $index) {
+        <article class="card" [appReveal]="i * 90">
+          <span class="card__num" aria-hidden="true">0{{ i + 1 }}</span>
+          <div class="card__icon"><i [class]="servizio.icon"></i></div>
+          <h3>{{ servizio.title }}</h3>
+          <p>{{ servizio.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

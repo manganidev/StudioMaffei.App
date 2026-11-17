@@ -1,0 +1,39 @@
+<section class="section section--cream" id="studio">
+  <div class="container about">
+    <div class="about__media" appReveal>
+      <img src="assets/img/teamwork.png" alt="" loading="lazy">
+      <div class="about__badge">
+        <strong>10+</strong>
+        <span>anni di<br>esperienza</span>
+      </div>
+    </div>
+
+    <div class="about__copy">
+      <header class="section-head" appReveal>
+        <span class="eyebrow">Lo studio</span>
+        <h2>Un unico punto di riferimento per <em>lavoro, fisco e società.</em></h2>
+      </header>
+
+      <p appReveal="80">
+        Decennale esperienza nel settore. L'attività svolta spazia dalla consulenza del lavoro a quella
+        fiscale e societaria, garantendo alla clientela una completa assistenza per le aziende e i privati.
+      </p>
+
+      <ul class="checks">
+        @for (punto of punti; track punto.title; let i = $index) {
+          <li [appReveal]="140 + i * 80">
+            <i class="fa-solid fa-check"></i>
+            <div>
+              <strong>{{ punto.title }}</strong>
+              <span>{{ punto.text }}</span>
+            </div>
+          </li>
+        }
+      </ul>
+
+      <a class="btn btn--primary" href="#contatti" (click)="go($event, 'contatti')" appReveal="380">
+        Richiedi una consulenza <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

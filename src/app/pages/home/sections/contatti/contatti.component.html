@@ -1,0 +1,59 @@
+<section class="section section--dark" id="contatti">
+  <div class="container">
+    <header class="section-head" appReveal>
+      <span class="eyebrow">Contatti e info</span>
+      <h2>Parliamone. <em>Siamo a disposizione.</em></h2>
+      <p>
+        Chiamaci in orario d'ufficio oppure scrivi direttamente al servizio di cui hai bisogno:
+        ti risponderà la persona giusta.
+      </p>
+    </header>
+
+    <div class="contact">
+      <div class="contact__main" appReveal>
+        <a class="tile tile--phone" [href]="studio.phone.href">
+          <i class="fa-solid fa-phone"></i>
+          <small class="label">Telefono ufficio</small>
+          <strong>{{ studio.phone.display }}</strong>
+          <span class="tile__cta">Chiama ora <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <div class="tile">
+          <i class="fa-regular fa-clock"></i>
+          <small class="label">Orari</small>
+          <strong>{{ studio.hours.days }}</strong>
+          <span>{{ studio.hours.time }}</span>
+        </div>
+
+        <a class="tile" [href]="'mailto:' + studio.email">
+          <i class="fa-regular fa-envelope"></i>
+          <small class="label">Mail studio</small>
+          <strong class="tile__mail">{{ studio.email }}</strong>
+          <span>Per informazioni generali</span>
+        </a>
+      </div>
+
+      <div class="contact__team">
+        @for (gruppo of team; track gruppo.service; let i = $index) {
+          <div class="team" [appReveal]="120 + i * 100">
+            <h3><i [class]="gruppo.icon"></i> {{ gruppo.service }}</h3>
+            <ul>
+              @for (persona of gruppo.people; track persona.email) {
+                <li>
+                  <a [href]="'mailto:' + persona.email">
+                    <span class="avatar" aria-hidden="true">{{ persona.name[0] }}</span>
+                    <span class="who">
+                      <strong>{{ persona.name }}</strong>
+                      <small>{{ persona.email }}</small>
+                    </span>
+                    <i class="fa-solid fa-arrow-right go" aria-hidden="true"></i>
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

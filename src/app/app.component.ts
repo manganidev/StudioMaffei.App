@@ -1,14 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'StudioMaffei.App';
-}
+export class AppComponent {}

@@ -1,0 +1,26 @@
+<header class="nav" [class.nav--solid]="solid()" [class.nav--open]="open()">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" (click)="go($event, 'top')" aria-label="Studio Maffei, torna all'inizio">
+      <span class="brand__mark">SM</span>
+      <span class="brand__text">
+        <strong>Studio Maffei</strong>
+        <small>{{ studio.role }}</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="menu-principale" aria-label="Navigazione principale">
+      @for (link of links; track link.id) {
+        <a [href]="'#' + link.id" (click)="go($event, link.id)">{{ link.label }}</a>
+      }
+      <a class="btn btn--accent nav__cta" [href]="studio.phone.href">
+        <i class="fa-solid fa-phone"></i> {{ studio.phone.display }}
+      </a>
+    </nav>
+
+    <button class="nav__toggle" type="button" (click)="open.set(!open())"
+      [attr.aria-expanded]="open()" aria-controls="menu-principale"
+      [attr.aria-label]="open() ? 'Chiudi il menu' : 'Apri il menu'">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

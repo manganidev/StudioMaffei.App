@@ -1,0 +1,88 @@
+.where {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 1.5rem;
+}
+
+.where__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+}
+
+.where__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.75rem;
+
+  .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}
+
+.where__row {
+  display: flex;
+  gap: 1rem;
+
+  > i {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: var(--brand-100);
+    color: var(--brand);
+  }
+
+  strong {
+    display: block;
+    margin-top: .1rem;
+    font-size: 1.05rem;
+  }
+
+  span {
+    color: var(--muted);
+  }
+}
+
+.where__map {
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border: 0;
+    filter: grayscale(.3) contrast(1.05);
+  }
+}
+
+@media (max-width: 900px) {
+  .where {
+    grid-template-columns: 1fr;
+  }
+
+  .where__map,
+  .where__map iframe {
+    min-height: 340px;
+  }
+}

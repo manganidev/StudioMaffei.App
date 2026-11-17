@@ -1,10 +1,13 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
+import { HeroComponent } from './sections/hero/hero.component';
+import { ServiziComponent } from './sections/servizi/servizi.component';
+import { StudioComponent } from './sections/studio/studio.component';
+import { ContattiComponent } from './sections/contatti/contatti.component';
+import { DoveComponent } from './sections/dove/dove.component';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
+  imports: [HeroComponent, ServiziComponent, StudioComponent, ContattiComponent, DoveComponent],
   templateUrl: './home.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styleUrl: './home.component.scss'
 })
 export class HomeComponent {}
