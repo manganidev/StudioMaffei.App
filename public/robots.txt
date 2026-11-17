@@ -1,5 +1,6 @@
-# Studio Maffei Marialuisa – https://www.studiomaffei.info/
-# Il sito può essere letto da tutti i motori di ricerca e dagli assistenti AI.
+# Studio Maffei Marialuisa - https://www.studiomaffei.info/
+# Tutti i motori di ricerca e gli assistenti AI possono leggere il sito.
+# (File volutamente solo ASCII, senza lettere accentate.)
 
 User-agent: *
 Allow: /

@@ -89,6 +89,15 @@ export function buildStructuredData(): object {
         jobTitle: STUDIO.role,
         worksFor: { '@id': studioId },
         memberOf: { '@type': 'Organization', name: STUDIO.orderFull },
+        ...(isPlaceholder(STUDIO.legal.alboNumber)
+          ? {}
+          : {
+              identifier: {
+                '@type': 'PropertyValue',
+                name: `Iscrizione all'${STUDIO.orderFull}`,
+                value: STUDIO.legal.alboNumber,
+              },
+            }),
       },
       {
         '@type': 'WebSite',

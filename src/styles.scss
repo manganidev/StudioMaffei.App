@@ -41,8 +41,9 @@
   box-sizing: border-box;
 }
 
+/* Niente scroll-behavior: smooth globale: renderebbe "animato" anche il ritorno in cima al cambio pagina.
+   Lo scorrimento fluido verso le sezioni è gestito in JavaScript (shared/scroll.ts). */
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 12px);
   -webkit-text-size-adjust: 100%;
 }
@@ -59,9 +60,12 @@ body {
   overflow-x: hidden;
 }
 
+/* height: auto serve perché gli attributi width/height dell'HTML (anti salti di layout)
+   non blocchino aspect-ratio e proporzioni nel CSS. */
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {

@@ -36,7 +36,7 @@ export const STUDIO = {
   // Dati legali obbligatori (art. 35 DPR 633/72 e D.Lgs. 70/2003): COMPILARE prima della pubblicazione.
   legal: {
     vatNumber: '[DA COMPLETARE]', // Partita IVA
-    alboNumber: '[DA COMPLETARE]', // Numero di iscrizione all'Ordine dei Consulenti del Lavoro di Firenze
+    alboNumber: '933', // Numero di iscrizione all'Ordine dei Consulenti del Lavoro di Firenze
     hosting: 'Aruba S.p.A.', // Fornitore di hosting del sito (responsabile del trattamento)
     privacyUpdated: '17 novembre 2026',
   },
